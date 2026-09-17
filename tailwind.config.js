@@ -4,7 +4,7 @@ module.exports = {
   safelist: ['flex', 'hidden'], // sættes fra JavaScript
   theme: {
     extend: {
-      colors: { bordeaux: '#4B1225', dyb: '#2A0B15', creme: '#F2E7D8', guld: '#C8A45D', rose: '#E3A6A1' },
+      colors: { oliven: '#33382A', skov: '#1F221B', creme: '#F1ECDD', salvie: '#B9BB8E', lys: '#DCDCC0' },
       fontFamily: { display: ['"Cormorant Garamond"', 'Georgia', 'serif'], body: ['Karla', 'system-ui', 'sans-serif'] },
     },
   },

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Manon – vinbar og cocktails i Frederiksgade, Aarhus</title>
   <meta name="description" content="Sydlandsk inspireret bar i Frederiksgade 44, Aarhus. Vin fra Frankrig, Italien og Spanien, cocktails, månedens vin og jazz i baggrunden. Åben onsdag til lørdag.">
-  <meta name="theme-color" content="#2A0B15">
+  <meta name="theme-color" content="#1F221B">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Manon – vinbar og cocktails i Aarhus">
   <meta property="og:description" content="Vin, cocktails og jazz i Frederiksgade 44. Åben onsdag til lørdag.">
   <meta property="og:image" content="img/hero.jpg">
   <meta property="og:locale" content="da_DK">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232A0B15'/%3E%3Ctext x='50%25' y='50%25' dy='.36em' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='44' fill='%23C8A45D'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F221B'/%3E%3Ctext x='50%25' y='50%25' dy='.36em' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='44' fill='%23B9BB8E'%3EM%3C/text%3E%3C/svg%3E">
   <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-garamond-italic.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/karla-normal.woff2" crossorigin>
   <link rel="preload" as="image" href="img/hero.jpg">
@@ -19,32 +19,32 @@
   <link rel="stylesheet" href="css/site.css">
   <script>document.documentElement.classList.add('js')</script>
   <style>
-    html { scroll-behavior: smooth; background: #2A0B15; }
+    html { scroll-behavior: smooth; background: #1F221B; }
     [id] { scroll-margin-top: 72px; }
-    ::selection { background: #C8A45D; color: #2A0B15; }
-    a:focus-visible, button:focus-visible { outline: 2px solid #C8A45D; outline-offset: 4px; border-radius: 2px; }
+    ::selection { background: #B9BB8E; color: #1F221B; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #B9BB8E; outline-offset: 4px; border-radius: 2px; }
 
     .frame { overflow: hidden; }
     .frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .leader { display: flex; align-items: baseline; gap: .6rem; }
     .leader > span:first-child { min-width: 0; }
-    .leader .dots { flex: 1; min-width: 1.5rem; border-bottom: 1px dotted rgba(200,164,93,.6); transform: translateY(-.35em); }
+    .leader .dots { flex: 1; min-width: 1.5rem; border-bottom: 1px dotted rgba(185,187,142,.6); transform: translateY(-.35em); }
     .leader > span:last-child { white-space: nowrap; }
-    .hero-shade { background: linear-gradient(to top, rgba(42,11,21,.94) 0%, rgba(42,11,21,.5) 50%, rgba(42,11,21,.25) 100%); }
+    .hero-shade { background: linear-gradient(to top, rgba(31,34,27,.94) 0%, rgba(31,34,27,.5) 50%, rgba(31,34,27,.25) 100%); }
 
     /* Åben/lukket-prik */
     .status-dot { width: .5rem; height: .5rem; border-radius: 999px; background: currentColor; flex: none; }
-    [data-state="open"] .status-dot { color: #9BCB8F; box-shadow: 0 0 0 3px rgba(155,203,143,.22); }
-    [data-state="closed"] .status-dot { color: #E3A6A1; }
+    [data-state="open"] .status-dot { color: #A8D08D; box-shadow: 0 0 0 3px rgba(168,208,141,.22); }
+    [data-state="closed"] .status-dot { color: #D9A58B; }
 
     /* Statisk kort: billedet er 2304×1280, adressen ligger i pixel 1208,741 og centreres i rammen */
     .kort-img { position: absolute; left: 50%; top: 50%; width: 2304px; height: 1280px; max-width: none; transform: translate(-1208px, -741px); user-select: none; pointer-events: none; }
-    .kort-pin { position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 999px; background: #C8A45D; box-shadow: 0 0 0 6px rgba(200,164,93,.28), 0 0 0 1px #2A0B15 inset; }
-    .kort-pin-label { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.35rem; color: #F2E7D8; text-shadow: 0 1px 8px rgba(42,11,21,.9); }
+    .kort-pin { position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 999px; background: #B9BB8E; box-shadow: 0 0 0 6px rgba(185,187,142,.28), 0 0 0 1px #1F221B inset; }
+    .kort-pin-label { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.35rem; color: #F1ECDD; text-shadow: 0 1px 8px rgba(31,34,27,.9); }
     #kortramme iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
     /* Dagens række i åbningstiderne */
-    tr.is-today td { color: #C8A45D; }
+    tr.is-today td { color: #B9BB8E; }
     tr.is-today td:first-child::after { content: " · i dag"; font-size: .8em; opacity: .8; }
 
     /* Mobilmenu */
@@ -75,6 +75,7 @@
     "name": "Manon",
     "image": "img/hero.jpg",
     "telephone": "+45 31 44 61 20",
+    "email": "booking@manonaarhus.dk",
     "address": { "@type": "PostalAddress", "streetAddress": "Frederiksgade 44", "postalCode": "8000", "addressLocality": "Aarhus C", "addressCountry": "DK" },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "14:00", "closes": "23:00" },
@@ -86,22 +87,22 @@
   }
   </script>
 </head>
-<body class="font-body bg-bordeaux text-creme antialiased">
+<body class="font-body bg-oliven text-creme antialiased">
 
-  <a href="#indhold" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-creme focus:text-dyb focus:px-4 focus:py-2 focus:font-semibold">Spring til indhold</a>
+  <a href="#indhold" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-creme focus:text-skov focus:px-4 focus:py-2 focus:font-semibold">Spring til indhold</a>
 
   <!-- Nav -->
-  <header class="sticky top-0 z-50 bg-dyb border-b border-guld/20">
+  <header class="sticky top-0 z-50 bg-skov border-b border-salvie/20">
     <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-4" aria-label="Hovedmenu">
-      <a href="#top" class="font-display font-semibold italic text-3xl leading-none hover:text-guld transition-colors">Manon</a>
+      <a href="#top" class="font-display font-semibold italic text-3xl leading-none hover:text-salvie transition-colors">Manon</a>
       <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
-        <a href="#denne-maaned" class="hover:text-guld transition-colors">Denne måned</a>
-        <a href="#kortet" class="hover:text-guld transition-colors">Kortet</a>
-        <a href="#om" class="hover:text-guld transition-colors">Om Manon</a>
-        <a href="#find-os" class="hover:text-guld transition-colors">Find os</a>
+        <a href="#denne-maaned" class="hover:text-salvie transition-colors">Denne måned</a>
+        <a href="#kortet" class="hover:text-salvie transition-colors">Kortet</a>
+        <a href="#om" class="hover:text-salvie transition-colors">Om Manon</a>
+        <a href="#find-os" class="hover:text-salvie transition-colors">Find os</a>
       </div>
       <div class="flex items-center gap-2">
-        <a href="#find-os" class="js-status inline-flex items-center gap-2 text-sm font-semibold text-guld hover:text-creme transition-colors" data-state="">
+        <a href="#find-os" class="js-status inline-flex items-center gap-2 text-sm font-semibold text-salvie hover:text-creme transition-colors" data-state="">
           <span class="status-dot" aria-hidden="true"></span>
           <span class="js-status-text">Onsdag til lørdag</span>
         </a>
@@ -115,12 +116,13 @@
     </nav>
     <div id="mobilmenu" class="md:hidden">
       <div>
-        <div class="px-5 pb-5 pt-1 flex flex-col text-lg font-semibold border-t border-guld/20">
-          <a href="#denne-maaned" class="py-3 border-b border-guld/10 hover:text-guld">Denne måned</a>
-          <a href="#kortet" class="py-3 border-b border-guld/10 hover:text-guld">Kortet</a>
-          <a href="#om" class="py-3 border-b border-guld/10 hover:text-guld">Om Manon</a>
-          <a href="#find-os" class="py-3 border-b border-guld/10 hover:text-guld">Find os og åbningstider</a>
-          <a href="tel:+4531446120" class="py-3 text-guld">Ring 31 44 61 20</a>
+        <div class="px-5 pb-5 pt-1 flex flex-col text-lg font-semibold border-t border-salvie/20">
+          <a href="#denne-maaned" class="py-3 border-b border-salvie/10 hover:text-salvie">Denne måned</a>
+          <a href="#kortet" class="py-3 border-b border-salvie/10 hover:text-salvie">Kortet</a>
+          <a href="#om" class="py-3 border-b border-salvie/10 hover:text-salvie">Om Manon</a>
+          <a href="#find-os" class="py-3 border-b border-salvie/10 hover:text-salvie">Find os og åbningstider</a>
+          <a href="tel:+4531446120" class="py-3 border-b border-salvie/10 text-salvie">Ring 31 44 61 20</a>
+          <a href="mailto:booking@manonaarhus.dk" class="py-3 text-salvie">Book bord eller selskab</a>
         </div>
       </div>
     </div>
@@ -129,7 +131,7 @@
   <main id="indhold">
 
   <!-- Hero -->
-  <section id="top" class="relative h-[calc(88svh-4rem)] min-h-[520px] max-h-[900px] bg-dyb overflow-hidden">
+  <section id="top" class="relative h-[calc(88svh-4rem)] min-h-[520px] max-h-[900px] bg-skov overflow-hidden">
     <div class="frame absolute inset-0"><img class="hero-img" src="img/hero.jpg" alt="Bardisk om aftenen med levende lys, vinflaske og glas" fetchpriority="high" onerror="this.remove()"></div>
     <div class="hero-shade absolute inset-0"></div>
     <div class="relative h-full max-w-6xl mx-auto px-5 flex flex-col justify-end pb-12 md:pb-20">
@@ -140,27 +142,27 @@
         Sydlandsk inspireret bar i Frederiksgade 44, tre minutter fra Banegården.
       </p>
       <div class="hero-in mt-8 flex flex-wrap gap-3">
-        <a href="#find-os" class="inline-flex items-center bg-creme text-dyb font-semibold px-6 py-3 rounded-sm hover:bg-rose transition-colors">Find os</a>
-        <a href="#kortet" class="inline-flex items-center border border-creme/60 font-semibold px-6 py-3 rounded-sm hover:border-guld hover:text-guld transition-colors">Se kortet</a>
+        <a href="mailto:booking@manonaarhus.dk?subject=Bordbestilling%20hos%20Manon" class="inline-flex items-center bg-creme text-skov font-semibold px-6 py-3 rounded-sm hover:bg-lys transition-colors">Book bord</a>
+        <a href="#find-os" class="inline-flex items-center border border-creme/60 font-semibold px-6 py-3 rounded-sm hover:border-salvie hover:text-salvie transition-colors">Find os</a>
       </div>
     </div>
   </section>
 
   <!-- Opslagstavle: det, gæster leder efter først -->
-  <div class="bg-dyb border-b border-guld/30">
+  <div class="bg-skov border-b border-salvie/30">
     <div class="max-w-6xl mx-auto px-5 py-8 grid sm:grid-cols-3 gap-6 sm:gap-10 text-creme/90">
       <div>
-        <p class="font-display italic text-xl text-guld">Åbningstider</p>
+        <p class="font-display italic text-xl text-salvie">Åbningstider</p>
         <p class="mt-1">Onsdag 14–23, torsdag 14–24<br>Fredag 14–02, lørdag 12–02</p>
         <p class="js-status mt-2 hidden items-center gap-2 text-sm font-semibold" data-state=""><span class="status-dot" aria-hidden="true"></span><span class="js-status-long"></span></p>
       </div>
       <div>
-        <p class="font-display italic text-xl text-guld">Bord</p>
-        <p class="mt-1">Kom bare forbi. Er I mange, så ring på <a href="tel:+4531446120" class="underline underline-offset-4 whitespace-nowrap hover:text-guld">31 44 61 20</a>.</p>
+        <p class="font-display italic text-xl text-salvie">Bord</p>
+        <p class="mt-1">Kom bare forbi. Er I mange, så ring på <a href="tel:+4531446120" class="underline underline-offset-4 whitespace-nowrap hover:text-salvie">31 44 61 20</a> eller skriv til <a href="mailto:booking@manonaarhus.dk" class="underline underline-offset-4 whitespace-nowrap hover:text-salvie">booking@manonaarhus.dk</a>.</p>
       </div>
       <div>
-        <p class="font-display italic text-xl text-guld">Adresse</p>
-        <p class="mt-1">Frederiksgade 44, 8000 Aarhus C<br><a href="#find-os" class="underline underline-offset-4 hover:text-guld">Se kort</a></p>
+        <p class="font-display italic text-xl text-salvie">Adresse</p>
+        <p class="mt-1">Frederiksgade 44, 8000 Aarhus C<br><a href="#find-os" class="underline underline-offset-4 hover:text-salvie">Se kort</a></p>
       </div>
     </div>
   </div>
@@ -170,26 +172,26 @@
     <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
       <h2 class="reveal font-display font-semibold text-5xl md:text-6xl leading-none">Denne måned</h2>
       <div class="mt-10 grid md:grid-cols-2 gap-10 md:gap-16">
-        <div class="reveal border-t border-guld/50 pt-6 flex flex-col">
+        <div class="reveal border-t border-salvie/50 pt-6 flex flex-col">
           <p class="font-display italic text-3xl">Månedens vin</p>
           <p class="mt-3 text-lg text-creme/85">Hver måned vælger vi én flaske, vi selv drikker for tiden, og sætter den til 300 kr. Spørg, hvad det er i denne måned.</p>
-          <p class="mt-auto pt-4 text-3xl font-display text-guld">300 kr. flasken</p>
+          <p class="mt-auto pt-4 text-3xl font-display text-salvie">300 kr. flasken</p>
         </div>
-        <div class="reveal border-t border-guld/50 pt-6 flex flex-col">
+        <div class="reveal border-t border-salvie/50 pt-6 flex flex-col">
           <p class="font-display italic text-3xl">Årstidens drink</p>
           <p class="mt-3 text-lg text-creme/85">Manon Spritz: Lillet Rosé, rabarber, cava og danskvand. Skifter, når årstiden gør.</p>
-          <p class="mt-auto pt-4 text-3xl font-display text-guld">85 kr.</p>
+          <p class="mt-auto pt-4 text-3xl font-display text-salvie">85 kr.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Billeder i fuld bredde -->
-  <section class="bg-dyb" aria-label="Billeder fra baren">
+  <section class="bg-skov" aria-label="Billeder fra baren">
     <div class="grid grid-cols-3 gap-1 md:gap-2">
-      <div class="frame aspect-[3/4] bg-bordeaux"><img src="img/1.jpg" alt="Cocktail på en marmordisk" loading="lazy" onerror="this.remove()"></div>
-      <div class="frame aspect-[3/4] bg-bordeaux"><img src="img/2.jpg" alt="Hvidvin bliver skænket i baren" loading="lazy" onerror="this.remove()"></div>
-      <div class="frame aspect-[3/4] bg-bordeaux"><img src="img/3.jpg" alt="Rødvinsflasker på hylden" loading="lazy" onerror="this.remove()"></div>
+      <div class="frame aspect-[3/4] bg-oliven"><img src="img/1.jpg" alt="Cocktail på en marmordisk" loading="lazy" onerror="this.remove()"></div>
+      <div class="frame aspect-[3/4] bg-oliven"><img src="img/2.jpg" alt="Live jazz med kontrabas og trommer hos Manon" loading="lazy" onerror="this.remove()"></div>
+      <div class="frame aspect-[3/4] bg-oliven"><img src="img/3.jpg" alt="Rødvinsflasker på hylden" loading="lazy" onerror="this.remove()"></div>
     </div>
   </section>
 
@@ -202,7 +204,7 @@
       </div>
       <div class="reveal md:col-span-7 text-lg">
         <ul class="space-y-4">
-          <li class="leader"><span>Cocktails, fx Manon Negroni, gin og vermouth med tonic</span><span class="dots"></span><span class="font-display text-2xl text-guld">85 kr.</span></li>
+          <li class="leader"><span>Cocktails, fx Manon Negroni, gin og vermouth med tonic</span><span class="dots"></span><span class="font-display text-2xl text-salvie">85 kr.</span></li>
           <li class="leader"><span>Vin på glas, rød, hvid og rosé</span><span class="dots"></span><span class="italic text-creme/70">Spørg</span></li>
           <li class="leader"><span>Bobler og champagne</span><span class="dots"></span><span class="italic text-creme/70">Spørg</span></li>
           <li class="leader"><span>Kælderkortet, til en særlig aften</span><span class="dots"></span><span class="italic text-creme/70">Spørg</span></li>
@@ -215,14 +217,14 @@
   </section>
 
   <!-- Om -->
-  <section id="om" class="bg-dyb">
+  <section id="om" class="bg-skov">
     <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
       <h2 class="reveal font-display font-semibold text-5xl md:text-6xl leading-none max-w-3xl">Den bar, vi selv savnede</h2>
       <div class="reveal mt-8 grid md:grid-cols-2 gap-8 text-lg leading-relaxed text-creme/85">
         <p>Manon er åbnet af fire venner, der ville lave det sted, de selv manglede i Aarhus: en bar, hvor man kan sidde længe, tale sammen uden at råbe og blive taget godt imod hele aftenen.</p>
         <p>Navnet er fransk, musikken er jazz og swing, skruet ned, og kortet har både noget til en onsdag og en flaske til en aften, der skal fejres.</p>
       </div>
-      <a href="https://www.instagram.com/manon_aarhus/" target="_blank" rel="noopener" class="mt-10 inline-flex items-center gap-2 bg-creme text-dyb font-semibold px-6 py-3 rounded-sm hover:bg-rose transition-colors">
+      <a href="https://www.instagram.com/manon_aarhus/" target="_blank" rel="noopener" class="mt-10 inline-flex items-center gap-2 bg-creme text-skov font-semibold px-6 py-3 rounded-sm hover:bg-lys transition-colors">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
         Følg os på Instagram
       </a>
@@ -232,21 +234,22 @@
   <!-- Find os: kort i fuld bredde, kortet med tider lægger sig ovenpå på store skærme -->
   <section id="find-os" class="relative">
     <!-- Let, statisk kort. Google Maps indlæses først, når man trykker, så siden ikke hakker -->
-    <div id="kortramme" class="relative overflow-hidden h-[380px] sm:h-auto sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-auto lg:h-[640px] bg-[#3B1323]">
+    <div id="kortramme" class="relative overflow-hidden h-[380px] sm:h-auto sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-auto lg:h-[640px] bg-[#2A2E23]">
       <img src="img/kort.jpg" alt="Kort over området omkring Frederiksgade 44 i Aarhus" class="kort-img" loading="lazy" decoding="async">
       <span class="kort-pin" aria-hidden="true"><span class="kort-pin-label">Manon</span></span>
-      <button id="vis-kort" type="button" class="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-10 inline-flex items-center gap-2 whitespace-nowrap bg-dyb/90 border border-guld/60 text-creme text-sm font-semibold px-4 py-2.5 rounded-sm hover:bg-dyb hover:border-guld transition-colors">
+      <button id="vis-kort" type="button" class="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-10 inline-flex items-center gap-2 whitespace-nowrap bg-skov/90 border border-salvie/60 text-creme text-sm font-semibold px-4 py-2.5 rounded-sm hover:bg-skov hover:border-salvie transition-colors">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg>
         Vis interaktivt kort
       </button>
       <span class="absolute right-2 top-1.5 text-[10px] text-creme/50">© OpenStreetMap</span>
     </div>
     <div class="max-w-6xl mx-auto px-5 lg:absolute lg:inset-x-0 lg:top-1/2 lg:-translate-y-1/2 pointer-events-none">
-      <div class="pointer-events-auto relative -mt-10 lg:mt-0 bg-dyb border border-guld/50 p-6 md:p-8 sm:max-w-md lg:max-w-sm lg:ml-auto shadow-xl shadow-black/30">
+      <div class="pointer-events-auto relative -mt-10 lg:mt-0 bg-skov border border-salvie/50 p-6 md:p-8 sm:max-w-md lg:max-w-sm lg:ml-auto shadow-xl shadow-black/30">
         <h2 class="font-display font-semibold text-4xl leading-none">Find os</h2>
         <address class="mt-4 not-italic text-lg space-y-1">
           <p>Frederiksgade 44<br>8000 Aarhus C</p>
-          <p><a href="tel:+4531446120" class="font-semibold underline underline-offset-4 hover:text-guld">31 44 61 20</a></p>
+          <p><a href="tel:+4531446120" class="font-semibold underline underline-offset-4 hover:text-salvie">31 44 61 20</a></p>
+          <p><a href="mailto:booking@manonaarhus.dk" class="underline underline-offset-4 whitespace-nowrap hover:text-salvie">booking@manonaarhus.dk</a></p>
         </address>
         <p class="js-status mt-4 hidden items-center gap-2 text-sm font-semibold" data-state=""><span class="status-dot" aria-hidden="true"></span><span class="js-status-long"></span></p>
         <table class="mt-3 w-full text-creme/85">
@@ -260,7 +263,7 @@
             <tr data-days="0"><td class="py-1">Søndag</td><td class="py-1 text-right">Lukket</td></tr>
           </tbody>
         </table>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Frederiksgade%2044%2C%208000%20Aarhus%20C" target="_blank" rel="noopener" class="mt-6 inline-flex items-center bg-creme text-dyb font-semibold px-5 py-2.5 rounded-sm hover:bg-rose transition-colors">Rutevejledning</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Frederiksgade%2044%2C%208000%20Aarhus%20C" target="_blank" rel="noopener" class="mt-6 inline-flex items-center bg-creme text-skov font-semibold px-5 py-2.5 rounded-sm hover:bg-lys transition-colors">Rutevejledning</a>
       </div>
     </div>
   </section>
@@ -268,7 +271,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-dyb border-t border-guld/30 mt-16 lg:mt-0">
+  <footer class="bg-skov border-t border-salvie/30 mt-16 lg:mt-0">
     <div class="max-w-6xl mx-auto px-5 py-10 grid gap-8 md:grid-cols-3 md:items-end">
       <div>
         <p class="font-display italic text-3xl">Manon</p>
@@ -277,8 +280,9 @@
       <div class="text-sm text-creme/70 space-y-1">
         <p>Onsdag 14–23 · Torsdag 14–24<br>Fredag 14–02 · Lørdag 12–02</p>
         <p class="flex gap-5 pt-2">
-          <a href="tel:+4531446120" class="underline underline-offset-4 hover:text-guld">31 44 61 20</a>
-          <a href="https://www.instagram.com/manon_aarhus/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-guld">Instagram</a>
+          <a href="tel:+4531446120" class="underline underline-offset-4 hover:text-salvie">31 44 61 20</a>
+          <a href="mailto:booking@manonaarhus.dk" class="underline underline-offset-4 hover:text-salvie">Booking</a>
+          <a href="https://www.instagram.com/manon_aarhus/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-salvie">Instagram</a>
         </p>
       </div>
       <p class="text-sm text-creme/45 md:text-right">Udkast lavet af Ron, 53 61 36 99, ronnyhong723@gmail.com</p>
