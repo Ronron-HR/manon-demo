@@ -44,9 +44,14 @@
 
     /* Åben/lukket-prik */
     .status-dot { width: .5rem; height: .5rem; border-radius: 999px; background: currentColor; flex: none; }
-    [data-state="open"] .status-dot { color: #9BCB8F; box-shadow: 0 0 0 0 rgba(155,203,143,.6); animation: pulse 2.4s ease-out infinite; }
+    [data-state="open"] .status-dot { color: #9BCB8F; box-shadow: 0 0 0 3px rgba(155,203,143,.22); }
     [data-state="closed"] .status-dot { color: #E3A6A1; }
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(155,203,143,.55); } 70%, 100% { box-shadow: 0 0 0 7px rgba(155,203,143,0); } }
+
+    /* Statisk kort: billedet er 2304×1280, adressen ligger i pixel 1208,741 og centreres i rammen */
+    .kort-img { position: absolute; left: 50%; top: 50%; width: 2304px; height: 1280px; max-width: none; transform: translate(-1208px, -741px); user-select: none; pointer-events: none; }
+    .kort-pin { position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 999px; background: #C8A45D; box-shadow: 0 0 0 6px rgba(200,164,93,.28), 0 0 0 1px #2A0B15 inset; }
+    .kort-pin-label { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.35rem; color: #F2E7D8; text-shadow: 0 1px 8px rgba(42,11,21,.9); }
+    #kortramme iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
     /* Dagens række i åbningstiderne */
     tr.is-today td { color: #C8A45D; }
@@ -96,7 +101,7 @@
   <a href="#indhold" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-creme focus:text-dyb focus:px-4 focus:py-2 focus:font-semibold">Spring til indhold</a>
 
   <!-- Nav -->
-  <header class="sticky top-0 z-50 bg-dyb/95 backdrop-blur border-b border-guld/20">
+  <header class="sticky top-0 z-50 bg-dyb border-b border-guld/20">
     <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-4" aria-label="Hovedmenu">
       <a href="#top" class="font-display font-semibold italic text-3xl leading-none hover:text-guld transition-colors">Manon</a>
       <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
@@ -236,14 +241,18 @@
 
   <!-- Find os: kort i fuld bredde, kortet med tider lægger sig ovenpå på store skærme -->
   <section id="find-os" class="relative">
-    <div class="aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[640px] bg-dyb">
-      <iframe
-        title="Kort over Manon, Frederiksgade 44, Aarhus"
-        src="https://www.google.com/maps?q=Frederiksgade%2044%2C%208000%20Aarhus%20C&output=embed"
-        width="100%" height="100%" style="border:0; display:block" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <!-- Let, statisk kort. Google Maps indlæses først, når man trykker, så siden ikke hakker -->
+    <div id="kortramme" class="relative overflow-hidden h-[380px] sm:h-auto sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-auto lg:h-[640px] bg-[#3B1323]">
+      <img src="img/kort.jpg" alt="Kort over området omkring Frederiksgade 44 i Aarhus" class="kort-img" loading="lazy" decoding="async">
+      <span class="kort-pin" aria-hidden="true"><span class="kort-pin-label">Manon</span></span>
+      <button id="vis-kort" type="button" class="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-10 inline-flex items-center gap-2 whitespace-nowrap bg-dyb/90 border border-guld/60 text-creme text-sm font-semibold px-4 py-2.5 rounded-sm hover:bg-dyb hover:border-guld transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg>
+        Vis interaktivt kort
+      </button>
+      <span class="absolute right-2 top-1.5 text-[10px] text-creme/50">© OpenStreetMap</span>
     </div>
     <div class="max-w-6xl mx-auto px-5 lg:absolute lg:inset-x-0 lg:top-1/2 lg:-translate-y-1/2 pointer-events-none">
-      <div class="pointer-events-auto relative -mt-10 lg:mt-0 bg-dyb border border-guld/50 p-6 md:p-8 sm:max-w-md lg:max-w-sm lg:ml-auto shadow-2xl shadow-black/40">
+      <div class="pointer-events-auto relative -mt-10 lg:mt-0 bg-dyb border border-guld/50 p-6 md:p-8 sm:max-w-md lg:max-w-sm lg:ml-auto shadow-xl shadow-black/30">
         <h2 class="font-display font-semibold text-4xl leading-none">Find os</h2>
         <address class="mt-4 not-italic text-lg space-y-1">
           <p>Frederiksgade 44<br>8000 Aarhus C</p>
@@ -369,6 +378,18 @@
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
     matchMedia('(min-width: 768px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+    // Google Maps først, når man beder om det
+    document.getElementById('vis-kort').addEventListener('click', () => {
+      const frame = document.getElementById('kortramme');
+      const iframe = document.createElement('iframe');
+      iframe.title = 'Kort over Manon, Frederiksgade 44, Aarhus';
+      iframe.src = 'https://www.google.com/maps?q=Frederiksgade%2044%2C%208000%20Aarhus%20C&z=16&output=embed';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.allowFullscreen = true;
+      frame.appendChild(iframe);
+      frame.querySelectorAll('button, .kort-pin').forEach(el => el.remove());
+    });
 
     // Rolig fade-in af sektioner, når de kommer i syne
     const reveals = document.querySelectorAll('.reveal');
